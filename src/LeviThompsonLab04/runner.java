@@ -3,19 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package emptyjavaproject;
+package LeviThompsonLab04;
+
+import edu.blackburn.cs.cs212.restaurantbase.*;
 
 /**
  *
- * @author paul.kline
+ * @author levi.thompson
  */
-public class Main {
+public class runner {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Coffee c = new Coffee(
+                "Regulare coffee", 
+                new Size("medium"), 
+                new Money(11.0));
     }
     
 }
