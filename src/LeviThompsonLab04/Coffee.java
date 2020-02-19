@@ -12,24 +12,30 @@ import edu.blackburn.cs.cs212.restaurantbase.*;
  */
 public class Coffee extends MenuItem {
 
+    /*constructor for coffee that takes a name size and
+    basePrice as args. */
     public Coffee(String name, Size size, Money basePrice) {
+        //calls the parent constructor
         super(name, basePrice);
     }
     
-    
+    //overrides the toString method of Coffee to print the name
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getName();
     }
 
+    //overrides the getPrice method to return the base price
     @Override
     public Money getPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getBasePrice();
     }
 
+    /*overrides the getReceiptItem method to return the combo 
+    of toString and getPrice */
     @Override
     public String getReceiptItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.toString() + " " + this.getPrice() + "\n";
     }
     
 }

@@ -14,17 +14,21 @@ import edu.blackburn.cs.cs212.restaurantbase.*;
  public class Size extends Measurement{
     private String name;
     
+    /* constructor for size that takes a name as args.*/
     public Size(String name) {
+        //assigns the name attribute to the argument's name
         this.name = name;
     }
 
+    //method that gets the name of the size
     public String getName() {
         return this.name;
     }
     
-    
+    /* overrides the toString method for Size
+    so it prints the size's name */
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.name;
     }
 }
