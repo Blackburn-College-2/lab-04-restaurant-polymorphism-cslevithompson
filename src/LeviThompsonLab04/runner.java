@@ -42,20 +42,35 @@ public class runner {
                 new Size("small"),
                 new Money(7.88)));
 
+        //creating fancycoffee
         FancyCoffee fC = new FancyCoffee("Cappuccino",
                 new Size("medium"),
                 new Money(2.50));
-
+        //adding syrups to fancycoffee
         fC.add(new Syrup("Chocolate"));
         fC.add(new Syrup("Coffee"));
         fC.add(new Syrup("Pure Sugar"));
+
+        //adding fancycoffee to receipt
         r.add(fC);
+
+        //creating sandwich
+        Sandwich s = new Sandwich("Normal Sandwich", new Money(3.0));
+        //adding meat and topping to sandwich
+        s.add(new Meat("Ham"));
+        s.add(new Topping("Cheese"));
+        
+        //adding sandwich to receipt
+        r.add(s);
 
         //printing receipt
         System.out.println(r.prepare());
+        //printing total
+        System.out.println("Total: " + r.getTotalPrice());
+        
 
     }
 
-    //estimated time: 2 hours
-    //time taken: 45 minutes
+    //estimated time: 5 hours
+    //time taken: 3-4 hours
 }

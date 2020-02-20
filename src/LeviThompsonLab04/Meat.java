@@ -15,18 +15,19 @@ public class Meat implements Orderable{
 
     private String name;
     
-    
+    //constructor for meat, with name as args. when creating
     public Meat(String name) {
         this.name = name;
         
     }
     
-    
+    //overrides getPrice to print meat's price
     @Override
     public Money getPrice() {
         return new Money(1.00);
     }
 
+    //overrides getReceiptItem to print meat
     @Override
     public String getReceiptItem() {
         return "\t" + name + " " + this.getPrice() + "\n";

@@ -15,23 +15,44 @@ import java.util.ArrayList;
 public class Sandwich implements Orderable {
 
     private ArrayList<Orderable> contents = new ArrayList();
+    private String name;
+    private Money basePrice;
 
-    public Sandwich(Money basePrice) {
-
+    /*constructor for sandwich, with name and 
+    baseprice as args. when creating*/
+    public Sandwich(String name, Money basePrice) {
+        this.name = name;
+        this.basePrice = basePrice;
     }
 
+    //method to add items to contents's arraylist
     public void add(Orderable o) {
         contents.add(o);
     }
 
+    //overrides getPrice to print sandwich's price
     @Override
     public Money getPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.basePrice;
     }
 
+    //overrides getReceiptItem to print sandwich
     @Override
     public String getReceiptItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //string builder to help with printing
+        StringBuilder x = new StringBuilder();
+            
+            x.append(this.name).append(" ").
+            
+            append(this.getPrice()).append("\n");
+        /*for loop to add contents to the list and print from contents
+        at the index of i */
+        for (int i = 0; i < contents.size(); i++) {
+
+            x.append(contents.get(i).getReceiptItem());
+
+        }
+        return x.toString();
     }
 
 }

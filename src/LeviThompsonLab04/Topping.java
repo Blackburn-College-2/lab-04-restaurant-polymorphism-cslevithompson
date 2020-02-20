@@ -15,19 +15,21 @@ public class Topping implements Orderable{
 
     private String type;
     
-    public Topping(String type, Money price) {
+    //constructor for topping, taking type as args. when creating
+    public Topping(String type) {
         this.type = type;
     }
     
-    
+    //overrides getPrice to print topping's price
     @Override
     public Money getPrice() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Money(0.50);
     }
 
+    //overrides getReceiptItem to print topping
     @Override
     public String getReceiptItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "\t" + type + " " + this.getPrice() + "\n";
     }
     
 }

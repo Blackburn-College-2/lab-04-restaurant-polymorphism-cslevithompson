@@ -15,23 +15,19 @@ public class Syrup implements Orderable{
 
     private String flavor;
     
+    //constructor for syrup, with flavor as args. when creating
     public Syrup(String flavor) {
         this.flavor = flavor;
         
     }
     
-    
-    @Override
-    public String toString() {
-        return flavor;
-    }
-    
-    
+    //overrides getPrice to print syrup's price
     @Override
     public Money getPrice() {
         return new Money(0.50);
     }
 
+    //overrides getReceiptItem to print syrup
     @Override
     public String getReceiptItem() {
         return "\t" + flavor + " " + this.getPrice() + "\n";
