@@ -12,11 +12,15 @@ import edu.blackburn.cs.cs212.restaurantbase.*;
  */
 public class Coffee extends MenuItem {
 
+    private Size size;
+    
+    
     /*constructor for coffee that takes a name size and
     basePrice as args. */
     public Coffee(String name, Size size, Money basePrice) {
         //calls the parent constructor
         super(name, basePrice);
+        this.size = size;
     }
     
     //overrides the toString method of Coffee to print the name
@@ -35,7 +39,10 @@ public class Coffee extends MenuItem {
     of toString and getPrice */
     @Override
     public String getReceiptItem() {
-        return this.toString() + " " + this.getPrice() + "\n";
+        return this.size.toString() + " " 
+                + this.toString() + " " 
+                + this.getPrice() 
+                + "\n";
     }
     
 }
